@@ -1,5 +1,8 @@
+"""Vision Language Model loading and initialization."""
+
 import torch
 from transformers import Blip2Processor, Blip2ForConditionalGeneration
+
 
 def load_vlm(model_id="Salesforce/blip2-flan-t5-xl"):
     """

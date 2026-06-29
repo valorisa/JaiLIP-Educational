@@ -1,6 +1,10 @@
-import torch
+"""Checkpoint loading utilities for model state management."""
+
 import os
 import warnings
+
+import torch
+
 
 def load_checkpoint(checkpoint_path, w_tensor, optimizer):
     """

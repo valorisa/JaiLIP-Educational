@@ -1,18 +1,23 @@
-import torch
-import torch.nn.functional as F
-from torchvision import transforms
-from PIL import Image
+"""JaiLIP image optimization algorithm implementation."""
+
 import os
 import gc
 import random
+
+import torch
+import torch.nn.functional as F
+from PIL import Image
+from torchvision import transforms
 
 # Constantes de normalisation BLIP-2 (ImageNet — identiques au processor HuggingFace)
 BLIP2_MEAN = [0.48145466, 0.4578275, 0.40821073]
 BLIP2_STD = [0.26862954, 0.26130258, 0.27577711]
 
+
 def get_image_processor():
     """Normalisation BLIP-2 : identique à Blip2Processor."""
     return transforms.Normalize(mean=BLIP2_MEAN, std=BLIP2_STD)
+
 
 def optimize_image(
     model,
@@ -66,9 +71,11 @@ def optimize_image(
     os.makedirs(checkpoint_dir, exist_ok=True)
     history = {"total": [], "mse": [], "ce": []}
 
+    mode_str = f'batch sampling (B={batch_size})' if target_corpus else 'single target'
     print(f"Démarrage de l'optimisation ({num_iterations} itérations)")
-    print(f"Mode: {'batch sampling (B=' + str(batch_size) + ')' if target_corpus else 'single target'}")
-    print(f"Cible: {target_text if target_corpus is None else target_corpus[0] + '...'}")
+    print(f"Mode: {mode_str}")
+    target_preview = target_text if target_corpus is None else target_corpus[0] + '...'
+    print(f"Cible: {target_preview}")
     print(f"c_weight = {c_weight}")
 
     for step in range(num_iterations):
@@ -129,7 +136,10 @@ def optimize_image(
 
         # Checkpointing
         if step % 50 == 0:
-            print(f"Step {step:05d}/{num_iterations} | Total: {total_loss.item():.4f} | MSE: {mse_loss.item():.4f} | CE: {ce_loss.item():.4f}")
+            print(f"Step {step:05d}/{num_iterations} | "
+                  f"Total: {total_loss.item():.4f} | "
+                  f"MSE: {mse_loss.item():.4f} | "
+                  f"CE: {ce_loss.item():.4f}")
             torch.save({
                 'step': step,
                 'w': w.detach().cpu(),
