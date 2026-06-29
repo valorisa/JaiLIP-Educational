@@ -1,5 +1,5 @@
 <!-- Badges -->
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/valorisa/jailip-educational/blob/main/notebooks/jaiLIP_tutorial.ipynb)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/valorisa/JaiLIP-Educational/blob/main/notebooks/jaiLIP_tutorial.ipynb)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Python 3.11+](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/downloads/)
 [![Transformers](https://img.shields.io/badge/Transformers-4.27%2B-orange.svg)](https://huggingface.co/docs/transformers/index)
@@ -103,7 +103,7 @@ For a faithful reproduction, load `RealToxicityPrompts` from HuggingFace and rep
 ## 📂 Repository Structure
 
 ```
-jailip-educational/
+JaiLIP-Educational/
 ├── README.md                 # This file (English)
 ├── README.fr.md              # This file (French)
 ├── requirements.txt          # Python dependencies
@@ -129,8 +129,8 @@ Click the **"Open In Colab"** badge at the top of this README. No installation r
 
 ```bash
 # Clone the repository
-git clone https://github.com/valorisa/jailip-educational.git
-cd jailip-educational
+git clone https://github.com/valorisa/JaiLIP-Educational.git
+cd JaiLIP-Educational
 
 # Install dependencies
 pip install -r requirements.txt
@@ -142,7 +142,7 @@ jupyter notebook notebooks/jaiLIP_tutorial.ipynb
 ### Option 3: Via Termux (Android)
 
 ```bash
-cd /data/data/com.termux/files/home/Projets/jailip-educational
+cd /data/data/com.termux/files/home/Projets/JaiLIP-Educational
 pip install -r requirements.txt
 jupyter notebook notebooks/jaiLIP_tutorial.ipynb
 ```
