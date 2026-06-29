@@ -1,0 +1,36 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+*.whl
+
+# Jupyter
+.ipynb_checkpoints/
+**/.ipynb_checkpoints/
+*.ipynb
+!notebooks/*.ipynb
+
+# Checkpoints générés
+checkpoints/
+*.log
+*.pkl
+*.pt
+*.pth
+*.h5
+*.hdf5
+
+# Environnements
+venv/
+env/
+.venv/
+
+# OS
+.DS_Store
+Thumbs.db
