@@ -1,5 +1,6 @@
 <!-- Badges -->
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/valorisa/JaiLIP-Educational/blob/main/notebooks/jaiLIP_tutorial.ipynb)
+[![GitHub Release](https://img.shields.io/github/v/release/valorisa/JaiLIP-Educational.svg)](https://github.com/valorisa/JaiLIP-Educational/releases)
 [![License: MIT](https://img.shields.io/badge/Licence-MIT-jaune.svg)](https://opensource.org/licenses/MIT)
 [![Python 3.11+](https://img.shields.io/badge/python-3.11+-bleu.svg)](https://www.python.org/downloads/)
 [![Transformers](https://img.shields.io/badge/Transformers-4.27%2B-orange.svg)](https://huggingface.co/docs/transformers/index)
